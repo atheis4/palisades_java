@@ -11,7 +11,7 @@ public class DeckTest {
     Deck two = new Deck();
 
     @Test
-    public void shuffle() {
+    public void testShuffle() {
         // before shuffle, both deck's should return the same first card.
         Assert.assertTrue("Error - default instantiation not equal",
                 one.draw().toString().equals(two.draw().toString()));
@@ -31,7 +31,7 @@ public class DeckTest {
     }
 
     @Test
-    public void draw() {
+    public void testDraw() {
         // after drawing a card, the size of the deck should decrease by one.
         int expectedSize = 51;
         one.draw();
@@ -40,7 +40,7 @@ public class DeckTest {
     }
 
     @Test
-    public void isEmptyTrue() {
+    public void testIsEmptyTrue() {
         // Exhaust one by drawing every card.
         while (!one.isEmpty()) {
             one.draw();
@@ -50,14 +50,14 @@ public class DeckTest {
     }
 
     @Test
-    public void isEmptyFalse() {
+    public void testIsEmptyFalse() {
         // a non exhausted deck.
         Assert.assertFalse("Error - isEmpty() on presumably non empty deck failed.",
                 two.isEmpty());
     }
 
     @Test
-    public void cardsInDeck() {
+    public void testCardsInDeck() {
         Assert.assertTrue("Error - cardsLeft failed, did not return 52.",
                 one.cardsInDeck() == 52);
     }
