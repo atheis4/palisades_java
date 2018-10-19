@@ -52,9 +52,17 @@ public class Player {
         return faceUpCards;
     }
 
-    //
-    public List<Card> getFaceDownCard(int index) {
-
+    // Returns the face down card located at the provided index.
+    // Throws an IllegalStateException if there are still face up cards that can be drawn.
+    // Throws an IllegalArgumentException if the index value is below 1 or greater than the number
+    // of face down cards.
+    public Card getFaceDownCard(int index) {
+        if (existsFaceUp()) {
+            throw new IllegalStateException(
+                    "Face down cards cannot be accessed while there are still face up cards.");
+        }
+        checkValidIndex(index);
+        return faceDownCards.remove(index);
     }
 
     //
@@ -63,14 +71,13 @@ public class Player {
     }
 
     //
-    private boolean isValidIndex(int index) {
+    private void checkValidIndex(int index) {
         if (index < 1 || index > numberOfFaceDown()) {
             throw new IllegalArgumentException(
-                    "The index value passed is not valid. "
-            );
+                    "The index value passed is not valid. ");
         }
     }
-    
+
     //
     private int numberOfFaceDown() {
         return faceDownCards.size();
