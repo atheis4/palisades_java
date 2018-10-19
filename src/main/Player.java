@@ -1,5 +1,5 @@
-/*
-    The Player class facilitates the counting and placement of the face down cards, the face up
+package main;/*
+    The main.Player class facilitates the counting and placement of the face down cards, the face up
     cards and the cards that are in the players hand.
 */
 

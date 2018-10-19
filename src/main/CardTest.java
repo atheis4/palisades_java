@@ -1,3 +1,5 @@
+package main;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -28,13 +30,13 @@ public class CardTest {
 
     @Test
     public void testCompareTo() {
-        // test first less than second
+        // main.test first less than second
         Assert.assertTrue("Error - first less than second failed.",
                 twoClubs.compareTo(aceSpades) < 0);
-        // test first greater than second
+        // main.test first greater than second
         Assert.assertTrue("Error - first greater than second failed.",
                 aceSpades.compareTo(tenDiamonds) > 0);
-        // test first equal to second
+        // main.test first equal to second
         Assert.assertTrue("Error - first equals second failed.",
                 tenDiamonds.compareTo(tenHearts) == 0);
     }

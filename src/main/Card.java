@@ -1,13 +1,9 @@
-/*
+package main;/*
     Represents a single playing card with a suit and a value.
 
     Values are 2 (*), 3, 4, 5, 6, 7, 8, 9, 10 (*), 11 (J), 12 (Q), 13 (K), and 14 (A).
     Suits are "spades", "hearts", "clubs", and "diamonds".
 */
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 public class Card implements Comparable<Card> {

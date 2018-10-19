@@ -1,3 +1,5 @@
+package main;
+
 public class PalisadesCard extends Card {
 
     public PalisadesCard(String suit, int value) {

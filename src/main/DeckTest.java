@@ -1,3 +1,5 @@
+package main;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +20,7 @@ public class DeckTest {
         // It is possible that a shuffled deck will still return the same card. Draw the entire
         // deck after shuffling one of them and assert arrays not equal. The probability of two
         // shuffles being exactly equal is 1 / 51! = ~6.45 x 10^-67. If that occurs, I pray this
-        // test suite witnesses it.
+        // main.test suite witnesses it.
         two.shuffle();
         List<String> fromOne = new ArrayList<String> ();
         List<String> fromTwo = new ArrayList<String> ();
