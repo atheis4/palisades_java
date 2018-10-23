@@ -5,8 +5,8 @@ import org.junit.Test;
 
 
 public class PalisadesCardTest {
-    Card tenHearts = new PalisadesCard("hearts", 10);
-    Card twoClubs = new PalisadesCard("clubs", 2);
+    PalisadesCard tenHearts = new PalisadesCard("hearts", 10);
+    PalisadesCard twoClubs = new PalisadesCard("clubs", 2);
 
     @Test
     public void testIsTenTrue() {

@@ -49,16 +49,6 @@ public class Card implements Comparable<Card> {
         return value;
     }
 
-    // Return true if the value of the card is 10. -- should be separated from card class
-    public boolean isTen() {
-        return value == 10;
-    }
-
-    // Return true if the value of the card is 2. -- should be separated from card class
-    public boolean isTwo() {
-        return value == 2;
-    }
-
     // The cards value is the only field that determines the equality of two cards.
     public int compareTo(Card other) {
         return value - other.value;

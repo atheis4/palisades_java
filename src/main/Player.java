@@ -22,24 +22,19 @@ public class Player {
         faceUpCards = new ArrayList<Card>();
     }
 
-    //
+    // Returns the player's name.
     public String getPlayerName() {
         return playerName;
     }
 
-    //
+    // Add a single card into the player's hand.
     public void addCard(Card newCard) {
         cards.add(newCard);
     }
 
-    //
+    // Add several cards to the player's hand.
     public void addCards(List<Card> newCards) {
         cards.addAll(newCards);
-    }
-
-    //
-    public void addToFaceUp(List<Card> upCards) {
-        faceUpCards.addAll(upCards);
     }
 
     //
@@ -47,11 +42,8 @@ public class Player {
         return cards.size();
     }
 
-    //
-    public List<Card> getFaceUpCards() {
-        return faceUpCards;
-    }
-
+    // TODO: Maybe this should just be one function that you give an index and stack type to?
+    // TODO: And the up and down cards could be a new private class that has these methods?
     // Returns the face down card located at the provided index.
     // Throws an IllegalStateException if there are still face up cards that can be drawn.
     // Throws an IllegalArgumentException if the index value is below 1 or greater than the number
@@ -65,17 +57,20 @@ public class Player {
         return faceDownCards.remove(index);
     }
 
-    //
-    private boolean existsFaceUp() {
-        return (!faceUpCards.isEmpty());
-    }
-
-    //
+    // Helper method to check that the selected index is valid. Face down cards are one-indexed and
+    // total no more than 3 at a time. If the input index is less than one or greater than the
+    // number of face down cards left in the player's hand, then an IllegalArgumentException is
+    // thrown.
     private void checkValidIndex(int index) {
         if (index < 1 || index > numberOfFaceDown()) {
             throw new IllegalArgumentException(
                     "The index value passed is not valid. ");
         }
+    }
+
+    // Return true if there are still face up cards in this player's hand.
+    private boolean existsFaceUp() {
+        return (!faceUpCards.isEmpty());
     }
 
     //
